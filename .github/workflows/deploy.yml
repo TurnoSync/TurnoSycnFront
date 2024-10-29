@@ -15,7 +15,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.17.1
-
+      - run : git config user.name github-actions
+      - run : git config user.email github-actions@github.com
       - name: Install dependencies
         run: npm install
 
