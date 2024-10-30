@@ -1,5 +1,15 @@
 {
-  "files": [],
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src", // Sets the basis for relative paths
+    "paths": {
+      "@components/*": ["src/components/*"] // Aliases for components
+    },
+    "composite": true
+  },
+  "include": ["src/**/*"], // Include all files within src and css
+  "exclude": ["node_modules"], // Exclude node_modules folder
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
