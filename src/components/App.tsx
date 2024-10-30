@@ -1,6 +1,6 @@
 import reactLogo from '/assets/react.svg'
 import typescriptLogo from '/assets/typescript.svg'
-import '../css/App.css'
+import '@css/App.css'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <a href="https://react.dev" target="_blank noopener">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://react.dev" target="_blank noopener">
+        <a href="https://www.typescriptlang.org/docs/" target="_blank noopener">
           <img src={typescriptLogo} className="logo" alt="React logo" />
         </a>
       </div>
