@@ -44,6 +44,7 @@ cd ./TurnoSyncFront
 ```bash
 --
 npm i
+npm install --save-dev @types/node
 --
 ```
 3. **Correr El Proyecto:**
