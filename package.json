@@ -1,16 +1,14 @@
 {
   "name": "turnosync",
   "private": true,
-  "homepage": "https://TurnoSync.github.io/TurnoSycnFront",
+  "homepage": "https://turno-sycn-front.vercel.app/",
   "version": "0.0.0+1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --base=/TurnoSycnFront",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
