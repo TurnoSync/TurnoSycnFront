@@ -1,4 +1,12 @@
 {
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src", // Sets the basis for relative paths
+    "composite": true
+  },
+  "exclude": ["node_modules"], // Exclude node_modules folder
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
