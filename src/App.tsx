@@ -1,4 +1,5 @@
 import "@css/general/App.css";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@pages/general/home.jsx";
@@ -9,7 +10,12 @@ import SelectService from "@pages/selectService/selectService.tsx";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_relativeSplatPath: true,
+          v7_startTransition: true,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route
