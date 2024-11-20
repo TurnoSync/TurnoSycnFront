@@ -1,6 +1,5 @@
 import React from "react";
-import Service from "@components/customer/selectService/selectService.tsx";
-import ServiceHub from "@components/customer/selectService/serviceHub.tsx";
+import Service from "@components/customer/selectService/serviceFather.tsx";
 import LayoutSelectService from "@layout/customer/selectService/layoutSelectService.tsx";
 import "../../css/customer/selectService/selectService.css";
 
@@ -18,7 +17,6 @@ const Customer: React.FC = () => {
         <h1 id="h1Title">Select Services</h1>
         <div id="fatherDiv">
           <Service />
-          <ServiceHub />
         </div>
       </LayoutSelectService>
     </div>

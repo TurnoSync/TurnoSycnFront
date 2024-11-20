@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "@css/customer/selectService/selectServiceComponent.css";
 
-// Define the interface for the service type
+interface ServiceProps {
+  onSelectService: (serviceId: number) => void;
+}
+
 interface Service {
   id: number;
   name: string;
@@ -11,38 +14,26 @@ interface Service {
   storeId: number;
 }
 
-// Service component of type React.FC (Functional Component)
-const Service: React.FC = () => {
-  // Use useState to store the fetched services, and type the state with Service[] or null
+const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
   const [data, setData] = useState<Service[] | null>(null);
 
-  // Use useEffect to fetch services from an API
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:3000/api/services");
-        if (!response.ok) {
-          throw new Error("Failed to fetch services");
-        }
+        if (!response.ok) throw new Error("Failed to fetch services");
         const data: Service[] = await response.json();
-        setData(data); // Set the fetched data into the state
+        setData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        fetchData();
       }
     };
 
-    fetchData(); // Call the function to fetch the services
-  }, []); // The effect runs only once when the component mounts
-
-  // Function to handle a service button click
-  const handleClick = (serviceId: number): void => {
-    console.log(`Button clicked for service with ID: ${serviceId}`);
-  };
+    fetchData();
+  }, []);
 
   return (
     <section>
-      {/* If data is available, display it; otherwise, show a loading message */}
       {data ? (
         <div id="divFather">
           {data.map((service) => (
@@ -55,7 +46,7 @@ const Service: React.FC = () => {
               </div>
               <button
                 className="plusButton"
-                onClick={() => handleClick(service.id)} // Trigger handleClick with the service ID
+                onClick={() => onSelectService(service.id)} // Llamar la función de prop
               >
                 <svg
                   className="plusIcon"

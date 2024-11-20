@@ -3,9 +3,12 @@ import "@css/customer/selectService/serviceHub.css";
 
 const color = "colorless";
 
-const value = false;
+interface ServiceHubProps {
+  selectedServices: number[];
+}
 
 const stars = {
+  name: "Barbería Lords Sucursal Country Club",
   starNumber: 4.8,
   stars: 4,
   number: 3169,
@@ -13,7 +16,7 @@ const stars = {
 };
 
 // Service component of type React.FC (Functional Component)
-const ServiceHub: React.FC = () => {
+const ServiceHub: React.FC<ServiceHubProps> = ({ selectedServices }) => {
   const circle = " ★";
   const contentFull = circle.repeat(stars.stars);
   const content = circle.repeat(5 - stars.stars);
@@ -23,7 +26,7 @@ const ServiceHub: React.FC = () => {
       <div id="shop">
         <img src="/favicon.svg" alt="" />
         <div id="shopName">
-          <h3>Barbería Lords Sucursal Country Club</h3>
+          <h3>{stars.name}</h3>
           <div id="fatherStars">
             <p>{stars.starNumber}</p>
             <span id="withColor">{contentFull}</span>{" "}
@@ -33,11 +36,23 @@ const ServiceHub: React.FC = () => {
           <p>{stars.location}</p>
         </div>
       </div>
-      <div id="serviceHub_Service">No hay servicios Seleccionados</div>
+      <div id="serviceHub_Service">
+        {selectedServices.length > 0 ? (
+          <ul>
+            {selectedServices.map((id, name) => (
+              <li key={id}>
+                Servicio ID: {id} {name}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No hay servicios Seleccionados</p>
+        )}
+      </div>
       <hr />
       <div id="value">
         <p>Total</p>
-        {value ? <p id="divFather">helo</p> : <p>Gratis</p>}
+        <p>{selectedServices.length > 0 ? "Calculando precio..." : "Gratis"}</p>
       </div>
     </div>
   );
