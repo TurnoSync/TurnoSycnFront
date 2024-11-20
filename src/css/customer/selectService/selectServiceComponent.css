@@ -63,6 +63,7 @@
   height: var(--plus_sideLength);
   background-color: #8976fd;
   overflow: hidden;
+  color: transparent;
 }
 
 .plusButton::before {
