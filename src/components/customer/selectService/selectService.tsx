@@ -28,6 +28,7 @@ const Service: React.FC = () => {
         setData(data); // Set the fetched data into the state
       } catch (error) {
         console.error("Error fetching data:", error);
+        fetchData();
       }
     };
 
@@ -40,7 +41,7 @@ const Service: React.FC = () => {
   };
 
   return (
-    <div>
+    <section>
       {/* If data is available, display it; otherwise, show a loading message */}
       {data ? (
         <div id="divFather">
@@ -73,7 +74,7 @@ const Service: React.FC = () => {
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </section>
   );
 };
 

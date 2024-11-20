@@ -1,5 +1,6 @@
 import React from "react";
 import Service from "@components/customer/selectService/selectService.tsx";
+import ServiceHub from "@components/customer/selectService/serviceHub.tsx";
 import LayoutSelectService from "@layout/customer/selectService/layoutSelectService.tsx";
 import "../../css/customer/selectService/selectService.css";
 
@@ -12,10 +13,13 @@ import "@fontsource/roboto/900.css";
 
 const Customer: React.FC = () => {
   return (
-    <div>
+    <div id="selectServiceFather">
       <LayoutSelectService title="TurnoSync | Select Service">
         <h1 id="h1Title">Select Services</h1>
-        <Service />
+        <div id="fatherDiv">
+          <Service />
+          <ServiceHub />
+        </div>
       </LayoutSelectService>
     </div>
   );

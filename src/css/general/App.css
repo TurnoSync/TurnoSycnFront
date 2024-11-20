@@ -1,3 +1,8 @@
+:root {
+  --Primary: #332c5c;
+  --Secondary: #8976fd;
+}
+
 /* Modern CSS Reset */
 *,
 *::before,
@@ -39,7 +44,6 @@ a {
 }
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   padding: 0;
