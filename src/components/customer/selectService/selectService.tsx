@@ -36,7 +36,7 @@ const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
   }, []);
 
   return (
-    <section>
+    <section id="selectService_section">
       {data ? (
         <div id="divFather">
           {data.map((service) => (

@@ -1,4 +1,4 @@
-section {
+#selectService_section {
   width: 55%;
 }
 
@@ -52,7 +52,7 @@ section {
   }
 }
 @media screen and (max-width: 956px) {
-  section {
+  #selectService_section {
     width: 100%;
   }
   #divFather {
