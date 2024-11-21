@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "@css/customer/selectService/selectServiceComponent.css";
 
+// Defining the properties received by the component
 interface ServiceProps {
-  onSelectService: (serviceId: number) => void;
+  onSelectService: (serviceId: string, servicePrice: number) => void; // Receives ID and Price
 }
 
+// Structure of the service data
 interface Service {
   id: number;
   name: string;
@@ -17,6 +19,7 @@ interface Service {
 const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
   const [data, setData] = useState<Service[] | null>(null);
 
+  // Using useEffect to load data from the API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,7 +49,7 @@ const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
               </div>
               <button
                 className="plusButton"
-                onClick={() => onSelectService(service.id)} // Llamar la función de prop
+                onClick={() => onSelectService(service.name, service.price)} // Send ID and price
               >
                 <svg
                   className="plusIcon"

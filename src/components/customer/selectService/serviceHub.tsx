@@ -1,25 +1,28 @@
 import React from "react";
 import "@css/customer/selectService/serviceHub.css";
 
-const color = "colorless";
-
 interface ServiceHubProps {
-  selectedServices: number[];
+  selectedServices: number[]; // Array of selected service name
+  selectedPrices: number[]; // Array of selected service prices
 }
 
-const stars = {
-  name: "Barbería Lords Sucursal Country Club",
-  starNumber: 4.8,
-  stars: 4,
-  number: 3169,
-  location: "Bogota D.C., Kennedy, Timiza",
-};
+const ServiceHub: React.FC<ServiceHubProps> = ({
+  selectedServices,
+  selectedPrices,
+}) => {
+  // Static data for the barbershop (you can adjust it as needed)
+  const stars = {
+    name: "Barbería Lords Sucursal Country Club",
+    starNumber: 4.8,
+    stars: 4,
+    number: 3169,
+    location: "Bogota D.C., Kennedy, Timiza",
+  };
 
-// Service component of type React.FC (Functional Component)
-const ServiceHub: React.FC<ServiceHubProps> = ({ selectedServices }) => {
-  const circle = " ★";
-  const contentFull = circle.repeat(stars.stars);
-  const content = circle.repeat(5 - stars.stars);
+  const totalSum = selectedPrices
+    // @ts-expect-error: There is no other way to add the numbers without conflict.
+    .map((value) => parseFloat(value))
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
   return (
     <div id="fatherServiceHub">
@@ -29,8 +32,7 @@ const ServiceHub: React.FC<ServiceHubProps> = ({ selectedServices }) => {
           <h3>{stars.name}</h3>
           <div id="fatherStars">
             <p>{stars.starNumber}</p>
-            <span id="withColor">{contentFull}</span>{" "}
-            <span id={color}>{content}</span>
+            <span id="withColor">{"★".repeat(stars.stars)}</span>
             <p>({stars.number})</p>
           </div>
           <p>{stars.location}</p>
@@ -38,21 +40,25 @@ const ServiceHub: React.FC<ServiceHubProps> = ({ selectedServices }) => {
       </div>
       <div id="serviceHub_Service">
         {selectedServices.length > 0 ? (
-          <ul>
-            {selectedServices.map((id, name) => (
-              <li key={id}>
-                Servicio ID: {id} {name}
-              </li>
+          <section>
+            {selectedServices.map((id, index) => (
+              <div key={id} className="servicesHub_select">
+                <p>{id}</p> <span> - </span>
+                <p className="servicesHub_price">
+                  {" "}
+                  Precio: <span>${selectedPrices[index]}</span>
+                </p>
+              </div>
             ))}
-          </ul>
+          </section>
         ) : (
-          <p>No hay servicios Seleccionados</p>
+          <p>No hay servicios seleccionados</p>
         )}
       </div>
       <hr />
       <div id="value">
         <p>Total</p>
-        <p>{selectedServices.length > 0 ? "Calculando precio..." : "Gratis"}</p>
+        <p>{selectedPrices.length > 0 ? `$${totalSum}` : "Gratis"}</p>
       </div>
     </div>
   );

@@ -83,4 +83,25 @@ hr {
   text-align: center;
   position: relative;
   bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.servicesHub_select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: start;
+}
+
+.servicesHub_select > span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.servicesHub_price {
+  font-weight: 600;
+}
+.servicesHub_price > span {
+  font-weight: 400;
 }
