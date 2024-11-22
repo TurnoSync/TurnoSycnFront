@@ -11,7 +11,7 @@ const ServiceHub: React.FC<ServiceHubProps> = ({
   selectedPrices,
 }) => {
   // Static data for the barbershop (you can adjust it as needed)
-  const stars = {
+  const data = {
     name: "Barbería Lords Sucursal Country Club",
     starNumber: 4.8,
     stars: 4,
@@ -29,13 +29,14 @@ const ServiceHub: React.FC<ServiceHubProps> = ({
       <div id="shop">
         <img src="/favicon.svg" alt="" />
         <div id="shopName">
-          <h3>{stars.name}</h3>
+          <h3>{data.name}</h3>
           <div id="fatherStars">
-            <p>{stars.starNumber}</p>
-            <span id="withColor">{"★".repeat(stars.stars)}</span>
-            <p>({stars.number})</p>
+            <p>{data.starNumber}</p>
+            <span id="withColor">{" ★".repeat(data.stars)}</span>
+            <span id="colorless">{" ★".repeat(5 - data.stars)}</span>
+            <p>({data.number})</p>
           </div>
-          <p>{stars.location}</p>
+          <p>{data.location}</p>
         </div>
       </div>
       <div id="serviceHub_Service">
