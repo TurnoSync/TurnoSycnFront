@@ -4,6 +4,7 @@ import { Service } from "../../domain/models/service";
 import { ServiceRepository } from "../../domain/repositories/serviceRepository";
 import config from "../config/config";
 
+console.log(config.endpoint_services);
 export class ServiceAPI implements ServiceRepository {
   private readonly endpoint = config.endpoint_services;
 
