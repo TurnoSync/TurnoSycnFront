@@ -2,9 +2,10 @@
 
 import { Service } from "../../domain/models/service";
 import { ServiceRepository } from "../../domain/repositories/serviceRepository";
+import config from "../config/config";
 
 export class ServiceAPI implements ServiceRepository {
-  private readonly endpoint = "http://localhost:3000/api/services";
+  private readonly endpoint = config.endpoint_services;
 
   async fetchServices(): Promise<Service[]> {
     const response = await fetch(this.endpoint);
