@@ -27,6 +27,14 @@ export default defineConfig({
         find: "@layout",
         replacement: path.resolve(path.join(__dirname, "./src/layout")),
       },
+      {
+        find: "@infrastructure",
+        replacement: path.resolve(path.join(__dirname, "./src/infrastructure")),
+      },
+      {
+        find: "@application",
+        replacement: path.resolve(path.join(__dirname, "./src/application")),
+      },
     ],
   },
 });
