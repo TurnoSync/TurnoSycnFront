@@ -1,5 +1,6 @@
 import React from "react";
 import "@css/customer/selectService/serviceHub.css";
+import dummyData from "../../../dummyData/dummyData.json";
 
 interface ServiceHubProps {
   selectedServices: number[]; // Array of selected service name
@@ -11,13 +12,7 @@ const ServiceHub: React.FC<ServiceHubProps> = ({
   selectedPrices,
 }) => {
   // Static data for the barbershop (you can adjust it as needed)
-  const data = {
-    name: "Barbería Lords Sucursal Country Club",
-    starNumber: 4.8,
-    stars: 4,
-    number: 3169,
-    location: "Bogota D.C., Kennedy, Timiza",
-  };
+  const data = dummyData;
 
   const totalSum = selectedPrices
     // @ts-expect-error: There is no other way to add the numbers without conflict.
