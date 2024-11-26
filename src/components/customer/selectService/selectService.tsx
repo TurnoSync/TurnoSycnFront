@@ -1,45 +1,42 @@
-import React, { useState, useEffect } from "react";
+// src/presentation/components/ServiceComponent.tsx
+
+import React, { useEffect, useState } from "react";
+import { Service } from "../../../domain/models/service";
+import { FetchServices } from "@application/useCases/fetchServices";
+import { ServiceAPI } from "@infrastructure/api/serviceAPI";
 import "@css/customer/selectService/selectServiceComponent.css";
 
-// Defining the properties received by the component
 interface ServiceProps {
   onSelectService: (serviceId: string, servicePrice: number) => void; // Receives ID and Price
 }
 
-// Structure of the service data
-interface Service {
-  id: number;
-  name: string;
-  description: string | null;
-  duration: number;
-  price: number;
-  storeId: number;
-}
+const ServiceComponent: React.FC<ServiceProps> = ({ onSelectService }) => {
+  const [services, setServices] = useState<Service[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
-  const [data, setData] = useState<Service[] | null>(null);
-
-  // Using useEffect to load data from the API
   useEffect(() => {
+    const fetchServicesUseCase = new FetchServices(new ServiceAPI());
+
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/services");
-        if (!response.ok) throw new Error("Failed to fetch services");
-        const data: Service[] = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        const data = await fetchServicesUseCase.execute();
+        setServices(data);
+      } catch (err) {
+        setError("Failed to load services.");
+        console.error(err);
       }
     };
 
     fetchData();
   }, []);
 
+  if (error) return <p>{error}</p>;
+
   return (
     <section id="selectService_section">
-      {data ? (
+      {services ? (
         <div id="divFather">
-          {data.map((service) => (
+          {services.map((service) => (
             <div key={service.id} className="service">
               <div className="divContent">
                 <h3 className="name">{service.name}</h3>
@@ -72,4 +69,4 @@ const Service: React.FC<ServiceProps> = ({ onSelectService }) => {
   );
 };
 
-export default Service;
+export default ServiceComponent;
