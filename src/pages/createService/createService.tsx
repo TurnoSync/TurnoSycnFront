@@ -1,6 +1,7 @@
 import React from "react";
 import config from "@infrastructure/config/config";
 import { ServiceCreate } from "../../domain/models/serviceCreate";
+import LayoutService from "@layout/customer/selectService/layoutService.tsx";
 
 const Customer: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -41,16 +42,23 @@ const Customer: React.FC = () => {
   };
 
   return (
-    <div>
-      <form id="postForm" onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="text" name="description" placeholder="Description" />
-        <input type="number" name="duration" placeholder="Duration" required />
-        <input type="number" name="price" placeholder="Price" required />
-        <input type="number" name="storeId" placeholder="StoreId" required />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <LayoutService title="TurnoSync | Create Service">
+      <div>
+        <form id="postForm" onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="text" name="description" placeholder="Description" />
+          <input
+            type="number"
+            name="duration"
+            placeholder="Duration"
+            required
+          />
+          <input type="number" name="price" placeholder="Price" required />
+          <input type="number" name="storeId" placeholder="StoreId" required />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </LayoutService>
   );
 };
 
