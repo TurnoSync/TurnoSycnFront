@@ -1,6 +1,6 @@
 import React from "react";
 import "@css/customer/selectService/serviceHub.css";
-import dummyData from "../../../dummyData/dummyData.json";
+import dummyData from "@dummyData/dummyData.json";
 
 interface ServiceHubProps {
   selectedServices: number[]; // Array of selected service name
