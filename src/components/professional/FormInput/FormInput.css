@@ -1,0 +1,17 @@
+label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin: 15px 0 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
