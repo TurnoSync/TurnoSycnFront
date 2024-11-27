@@ -1,6 +1,6 @@
 import React from "react";
 import LayoutService from "@layout/customer/selectService/layoutService.tsx";
-import CreateServices from "@components/customer/createService/CreateService";
+import CreateServices from "@components/customer/createService/createService";
 
 const Customer: React.FC = () => {
   return (
