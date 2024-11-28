@@ -24,16 +24,16 @@ export default defineConfig({
         replacement: path.resolve(path.join(__dirname, "./src/components")),
       },
       {
-        find: "@professionalC",
-        replacement: path.resolve(
-          path.join(__dirname, "./src/components/professional")
-        ),
+        find: "@layout",
+        replacement: path.resolve(path.join(__dirname, "./src/layout")),
       },
       {
-        find: "@customerC",
-        replacement: path.resolve(
-          path.join(__dirname, "./src/components/customer")
-        ),
+        find: "@infrastructure",
+        replacement: path.resolve(path.join(__dirname, "./src/infrastructure")),
+      },
+      {
+        find: "@application",
+        replacement: path.resolve(path.join(__dirname, "./src/application")),
       },
     ],
   },

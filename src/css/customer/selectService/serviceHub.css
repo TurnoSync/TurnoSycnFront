@@ -1,0 +1,107 @@
+#fatherServiceHub {
+  border: 1px solid #8d8d8dad;
+  width: 42%;
+  height: 36.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+  min-height: 36.5rem;
+}
+@media screen and (max-width: 956px) {
+  #fatherServiceHub {
+    width: 100%;
+  }
+}
+
+img {
+  min-width: 14.9%;
+  max-width: 15%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+#shopName {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#shop {
+  width: 100%;
+  min-height: 20%;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+#value {
+  width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 12px;
+}
+#value > p {
+  font-weight: 600;
+}
+hr {
+  width: 90%;
+  margin: auto;
+  border: 0.1px solid #8d8d8dad;
+}
+
+#withColor {
+  color: var(--Primary);
+}
+#colorless {
+  color: var(--Secondary);
+}
+#fatherStars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+#shopName > h3 {
+  font-size: 16px;
+}
+
+#shopName > p {
+  text-align: start;
+  font-size: 14px;
+  color: #2e2e2ed7;
+}
+
+#fatherStars > p {
+  font-weight: 600;
+}
+#fatherStars > span {
+  font-size: 18px;
+}
+
+#serviceHub_Service {
+  min-height: 5%;
+  height: fit-content;
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.servicesHub_select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: start;
+}
+
+.servicesHub_select > span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.servicesHub_price {
+  font-weight: 600;
+}
+.servicesHub_price > span {
+  font-weight: 400;
+}

@@ -1,0 +1,133 @@
+#selectService_section {
+  width: 55%;
+}
+
+#divFather {
+  height: auto;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+.service {
+  border: 1px solid #b9b9b9;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  height: fit-content;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: -8px 8px 9px 2px #8976fd3d;
+  min-height: 8.356rem;
+}
+
+.name {
+  font-weight: 800;
+  color: var(--Primary);
+}
+.duration {
+  font-weight: 400;
+  color: rgb(87, 87, 87);
+}
+.description {
+  font-weight: 500;
+  color: rgb(46, 46, 46);
+}
+.price {
+  font-weight: 600;
+}
+.divContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1026px) {
+  .service {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 956px) {
+  #selectService_section {
+    width: 100%;
+  }
+  #divFather {
+    padding-right: 0rem;
+  }
+}
+
+/* Button Add */
+
+.plusButton {
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: var(--Secondary);
+  overflow: hidden;
+  color: transparent;
+  border-radius: 0.6rem;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength)
+    var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton > .plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover > .plusIcon {
+  fill: #8976fd;
+  transform: rotate(180deg);
+  position: relative;
+  left: 5px;
+  top: 1px;
+}
+
+.plusButton:focus-visible > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusIcon {
+  padding-left: 5px;
+  padding-top: 2px;
+}
