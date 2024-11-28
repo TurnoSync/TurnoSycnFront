@@ -7,3 +7,7 @@ export interface ServiceCreate {
   price: number;
   storeId: number;
 }
+export interface ServiceCreateData {
+  name: string;
+  type: string;
+}
