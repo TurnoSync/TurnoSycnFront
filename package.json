@@ -2,7 +2,7 @@
   "name": "turnosync",
   "private": true,
   "homepage": "https://turno-sycn-front.vercel.app/",
-  "version": "0.0.0+1",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
