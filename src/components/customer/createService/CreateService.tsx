@@ -42,7 +42,7 @@ const CreateServices: React.FC = () => {
 
       const result = await response.json();
       toast.success("Data sent successfully!");
-      console.log("Data sent successfully:", result);
+      console.log("Data sent successfully: ", result);
     } catch (error) {
       toast.error("Failed to send data. Please try again.");
       console.error("Error:", error);
