@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "@css/customer/selectService/layoutSelectService.css";
+import "@css/customer/selectService/layoutService.css";
 
 interface LayoutProps {
   children: ReactNode;

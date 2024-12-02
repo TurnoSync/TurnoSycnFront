@@ -1,0 +1,22 @@
+[
+    {
+        "name": "name",
+        "type": "text"
+    },
+    {
+        "name": "description",
+        "type": "text"
+    },
+    {
+        "name": "duration",
+        "type": "number"
+    },
+    {
+        "name": "price",
+        "type": "number"
+    },
+    {
+        "name": "storeId",
+        "type": "number"
+    }
+]

@@ -6,3 +6,4 @@ declare module "@css/*";
 declare module "@src/*";
 declare module "@infrastructure/*";
 declare module "@application/*";
+declare module "@dummyData/*";

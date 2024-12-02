@@ -1,6 +1,6 @@
 import React from "react";
 import Service from "@components/customer/selectService/serviceFather.tsx";
-import LayoutSelectService from "@layout/customer/selectService/layoutSelectService.tsx";
+import LayoutService from "@layout/customer/selectService/layoutService.tsx";
 import "../../css/customer/selectService/selectService.css";
 
 import "@fontsource/roboto/100.css";
@@ -13,12 +13,12 @@ import "@fontsource/roboto/900.css";
 const Customer: React.FC = () => {
   return (
     <div id="selectServiceFather">
-      <LayoutSelectService title="TurnoSync | Select Service">
+      <LayoutService title="TurnoSync | Select Service">
         <h1 id="h1Title">Select Services</h1>
         <div id="fatherDiv">
           <Service />
         </div>
-      </LayoutSelectService>
+      </LayoutService>
     </div>
   );
 };

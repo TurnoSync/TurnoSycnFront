@@ -35,6 +35,10 @@ export default defineConfig({
         find: "@application",
         replacement: path.resolve(path.join(__dirname, "./src/application")),
       },
+      {
+        find: "@dummyData",
+        replacement: path.resolve(path.join(__dirname, "./src/dummyData")),
+      },
     ],
   },
 });
