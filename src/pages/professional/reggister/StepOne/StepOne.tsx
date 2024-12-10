@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './StepOne.css';
 import FormInput from '../../../../components/professional/FormInput/FormInput';
 import Button from '../../../../components/professional/Button/Button';
-import illustrationImage from '../../../../assets/illustration.png';
+import illustrationImage from '/public/assets/illustration.png';
 
 const StepOne = () => {
   const navigate = useNavigate();
