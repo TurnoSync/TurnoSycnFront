@@ -10,10 +10,10 @@ const StepTwo = () => {
   // Estado para el nombre del negocio y la URL
   const [businessName, setBusinessName] = useState('');
 
-  // Función para manejar el cambio en el nombre del negocio, filtrando caracteres no permitidos
+  // Función para manejar el cambio en el nombre del negocio, permitiendo letras, números, espacios, guiones y barra baja
   const handleBusinessNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.value
-      .replace(/[^a-zA-Z0-9\s]/g, '') // Permite solo letras, números y espacios
+      .replace(/[^a-zA-Z0-9\s_-]/g, '') // Permite solo letras, números, espacios, guiones y barra baja
       .replace(/\s+/g, ' '); // Remueve espacios múltiples
     setBusinessName(name);
   };
@@ -22,6 +22,12 @@ const StepTwo = () => {
   const formatBusinessNameForURL = (name: string) => {
     return name.toLowerCase().replace(/\s+/g, '-'); // Reemplaza espacios por guiones
   };
+
+
+    // Navegación limpia al siguiente paso
+    const handleContinue = () => {
+      navigate('/professional/register/step-three'); // Navegación limpia sin parámetros
+    };
 
   return (
     <div className="step-two-container">
@@ -44,8 +50,7 @@ const StepTwo = () => {
           readOnly
         />
         
-        <Button text="Continue" onClick={() => navigate('/professional/register/step-three')} />
-      </form>
+ <Button text="Continue" onClick={handleContinue} />      </form>
     </div>
   );
 };

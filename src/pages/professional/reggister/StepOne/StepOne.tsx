@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './StepOne.css';
 import FormInput from '../../../../components/professional/FormInput/FormInput';
@@ -7,8 +7,14 @@ import illustrationImage from '/public/assets/illustration.png';
 
 const StepOne = () => {
   const navigate = useNavigate();
+  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handlePhoneNumberChange = (e: { target: { value: string; }; }) => {
+    const value = e.target.value.replace(/\D/g, ''); // Reemplaza caracteres no numéricos
+    setPhoneNumber(value);
+  };
+
+  const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     navigate('/professional/register/step-two');
   };
@@ -23,7 +29,25 @@ const StepOne = () => {
           <form onSubmit={handleSubmit}>
             <FormInput label="Name" type="text" placeholder="Enter your name" />
             <FormInput label="Last name" type="text" placeholder="Enter your last name" />
-            <FormInput label="Phone Number" type="text" placeholder="+57 ▾ Enter your phone number" />
+            <div className="phone-input-wrapper">
+              <label htmlFor="phone-number" className="phone-label">Phone Number</label>
+              <div className="phone-input">
+                <select className="country-code" defaultValue="+57">
+                  <option value="+57">+57</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                  <option value="+91">+91</option>
+                </select>
+                <input
+                  type="text"
+                  id="phone-number"
+                  className="phone-number-input"
+                  placeholder="Enter your phone number"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                />
+              </div>
+            </div>
             <FormInput label="Password" type="password" placeholder="Enter your password" />
             <FormInput label="Email" type="email" placeholder="Enter your email" />
             <Button text="Signup now" />
