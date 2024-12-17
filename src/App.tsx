@@ -12,7 +12,7 @@ import StepOne from "./pages/professional/reggister/StepOne/StepOne";
 import StepTwo from "./pages/professional/reggister/StepTwo/StepTwo";
 import StepThree from "./pages/professional/reggister/StepThree/StepThree";
 
-function App() {
+function App() { 
   return (
     <>
       <BrowserRouter
