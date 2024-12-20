@@ -1,0 +1,58 @@
+.step-three-container {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center; /* Alinea el checkbox con el texto */
+  gap: 10px; /* Espacio entre el checkbox y el texto */
+  margin-top: 20px; /* Espacio respecto al input de dirección */
+}
+
+.checkbox-container input {
+  flex-shrink: 0; /* Evita que el checkbox cambie de tamaño */
+  width: 20px; /* Tamaño uniforme del checkbox */
+  height: 20px; /* Tamaño uniforme del checkbox */
+}
+
+.checkbox-container label {
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.4; /* Mejora la altura de línea del texto */
+  flex: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.finalize-button {
+  padding: 12px 20px;
+  background-color: #6366f1;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Botón alineado al ancho del formulario */
+  margin-top: 20px; /* Espacio suficiente con el checkbox */
+  text-align: center;
+}

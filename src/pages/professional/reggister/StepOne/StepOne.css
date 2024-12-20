@@ -1,0 +1,151 @@
+.step-one-background {
+  background-color: #f7f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.step-one-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.step-one-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5px;
+}
+
+.form-container {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+h1 {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+}
+
+h1 span {
+  color: #6366f1;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin-top: 10px;
+  color: #333;
+}
+
+p {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.terms {
+  display: flex;
+  align-items: center; /* Centra verticalmente el checkbox con el texto */
+  justify-content: flex-start; /* Alinea horizontalmente todo el contenido a la izquierda */
+  margin-top: 20px; /* Espacio respecto al botón */
+  gap: 10px; /* Espacio entre el checkbox y el texto */
+  line-height: 1.5; /* Espaciado entre las líneas del texto */
+  width: 100%; /* Asegura que ocupe todo el ancho del formulario */
+  text-align: left; /* Mantén el texto alineado a la izquierda */
+}
+
+.terms input {
+  margin: 0; /* Elimina cualquier margen predeterminado del checkbox */
+  width: auto;
+}
+
+.terms label {
+  font-size: 0.9em;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap; /* Permite que el texto se adapte en pantallas pequeñas */
+}
+
+.terms span {
+  color: #6366f1;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
+
+.illustration {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f4ff;
+  padding: 20px;
+}
+
+.illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+.phone-input-wrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.phone-label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.phone-input {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.country-code {
+  height: 100%; /* Coincide con la altura del contenedor */
+  width: 80px; /* Ancho fijo para consistencia */
+  padding: 0;
+  border: none; /* Sin bordes adicionales */
+  background-color: #fff;
+  font-size: 1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.phone-number-input {
+  height: 100%; /* Coincide con la altura del contenedor */
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 0 10px; /* Espaciado interno */
+  border: none; /* Sin bordes adicionales */
+  font-size: 1em;
+  box-sizing: border-box; /* Incluye el padding y los bordes */
+}
+
+
+
+
