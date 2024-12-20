@@ -11,8 +11,10 @@ import NotFound from "@pages/general/notFound";
 import StepOne from "./pages/professional/reggister/StepOne/StepOne";
 import StepTwo from "./pages/professional/reggister/StepTwo/StepTwo";
 import StepThree from "./pages/professional/reggister/StepThree/StepThree";
+import Login from "@pages/professional/login/Login";
 
-function App() { 
+
+function App() {
   return (
     <>
       <BrowserRouter
@@ -26,6 +28,7 @@ function App() {
           <Route path="/professional" Component={Professional} />
 
           {/* Rutas para el flujo de registro de profesional */}
+          <Route path="/professional/login" element={<Login />} />
           <Route path="/professional/register" element={<StepOne />} />
           <Route path="/professional/register/step-two" element={<StepTwo />} />
           <Route path="/professional/register/step-three" element={<StepThree />} />
